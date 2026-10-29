@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TraceAI | Investigation Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="watermark" aria-hidden="true">✥</div>
+
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink">
+      <div class="brand-icon">T</div>
+      <div><h1>TraceAI</h1><p>INVESTIGATION PORTAL</p></div>
+    </a>
+    <div class="public-label"><span></span> CASE INFORMATION SYSTEM</div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="landing">
+      <p class="eyebrow">SECURE CASE INFORMATION</p>
+      <h2>Investigation with<br><span>clarity and accountability.</span></h2>
+      <p class="hero-text">A workspace for investigative sketch creation, case review and controlled administration.</p>
+      <div class="tricolor"><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="roles-section" id="rolesSection">
+      <div class="section-heading">
+        <div><p class="eyebrow">PERSONNEL</p><h3>Select your role</h3></div>
+        <span class="section-note">Authorized staff access</span>
+      </div>
+
+      <div class="role-grid">
+        <button class="role-card" data-role="Investigator">
+          <div class="role-icon investigator-icon">⌕</div>
+          <p class="role-number">ROLE 01</p>
+          <h4>Investigator</h4>
+          <p>Witness descriptions, voice commands and AI sketch generation.</p>
+          <span class="role-action">Investigator login →</span>
+        </button>
+
+        <button class="role-card" data-role="Auditor">
+          <div class="role-icon auditor-icon">✓</div>
+          <p class="role-number">ROLE 02</p>
+          <h4>Auditor</h4>
+          <p>Review case activity, access history and sketch records.</p>
+          <span class="role-action">Auditor login →</span>
+        </button>
+
+        <button class="role-card" data-role="Admin">
+          <div class="role-icon admin-icon">⚙</div>
+          <p class="role-number">ROLE 03</p>
+          <h4>Admin</h4>
+          <p>Manage staff accounts, role assignments and portal settings.</p>
+          <span class="role-action">Admin login →</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="login-panel" id="loginPanel" hidden>
+      <button class="text-button" id="backToRoles">← Back to roles</button>
+      <p class="eyebrow">STAFF AUTHENTICATION</p>
+      <h3 id="loginTitle">Staff login</h3>
+      <p id="loginDescription" class="muted">Sign in to access your assigned workspace.</p>
+
+      <form id="loginForm">
+        <label for="username">Username / Staff ID</label>
+        <input id="username" autocomplete="username" required placeholder="Enter staff username">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required placeholder="Enter password">
+
+        <p id="loginMessage" class="message" aria-live="polite"></p>
+        <button class="primary-button" type="submit">Sign in securely →</button>
+      </form>
+      <p class="security-note">Prototype sign-in only. Replace with backend authentication before deployment.</p>
+    </section>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">AUTHORIZED WORKSPACE</p>
+          <h2 id="dashboardTitle">Dashboard</h2>
+          <p class="muted" id="dashboardSubtitle"></p>
+        </div>
+        <button class="secondary-button" id="logoutButton">Sign out</button>
+      </div>
+      <div class="dashboard-stats" id="dashboardStats"></div>
+      <div id="dashboardContent"></div>
+    </section>
+
+    <section class="chargesheet-section" id="chargeSheets">
+      <div class="section-heading">
+        <div><p class="eyebrow">PUBLIC RECORDS</p><h3>Charge-sheet access</h3></div>
+        <span class="record-badge">Public information only</span>
+      </div>
+
+      <div class="search-panel">
+        <div>
+          <div class="document-icon">▤</div>
+          <h4>Find a case record</h4>
+          <p class="muted">Search a reference in your authorized public records source.</p>
+        </div>
+        <form id="caseSearchForm">
+          <label for="caseReference">Public case reference</label>
+          <div class="search-row">
+            <input id="caseReference" required placeholder="Enter case reference">
+            <button class="primary-button" type="submit">Search</button>
+          </div>
+          <p id="caseSearchMessage" class="message" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div id="publicCaseResult" class="result-card" hidden></div>
+
+      <div class="official-link">
+        <div>
+          <p class="eyebrow">OFFICIAL EXTERNAL RESOURCE</p>
+          <h4>eCourts case information</h4>
+          <p class="muted">Search publicly available case status, orders and related court information.</p>
+        </div>
+        <a href="https://services.ecourts.gov.in/ecourtindia_v6/" target="_blank" rel="noopener noreferrer">Open eCourts ↗</a>
+      </div>
+    </section>
+
+    <footer>
+      <strong>TraceAI</strong>
+      <p>AI-generated facial sketches are investigative leads, not verified identities or proof of guilt.</p>
+      <p class="footer-small">Decorative Ashoka-inspired artwork, not an official government emblem.</p>
+    </footer>
+  </main>
+</body>
+</html>
