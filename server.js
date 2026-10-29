@@ -419,6 +419,37 @@ app.use((err, req, res, next) => {
   });
 });
 
+const { generateSketch } = require("./flux");
+
+app.post("/api/sketch/flux", async (req, res) => {
+  try {
+    const description = req.body?.description;
+
+    if (typeof description !== "string" ||
+        description.trim().length < 10 ||
+        description.length > 2000) {
+      return res.status(400).json({
+        error: "Enter a description between 10 and 2000 characters."
+      });
+    }
+
+    const imageUrl = await generateSketch(description.trim());
+
+    res.json({
+      success: true,
+      imageUrl,
+      disclaimer:
+        "AI-generated investigative illustration, not a verified identity."
+    });
+  } catch (error) {
+    console.error("FLUX error:", error.message);
+    res.status(502).json({
+      error: "Sketch generation failed. Check server logs and API access."
+    });
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(
     `TraceAI backend running at http://localhost:${PORT}`

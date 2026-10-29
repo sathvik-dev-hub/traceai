@@ -481,7 +481,7 @@ function renderInvestigator(root) {
 
       try {
         // Matches the current backend route.
-        const data = await apiRequest("/api/sketch/generate", {
+        const data = await apiRequest("/api/sketch/flux", {
           method: "POST",
           body: JSON.stringify({
             caseReference: caseRef,
